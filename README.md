@@ -22,7 +22,8 @@ The full reasoning is in [`_analysis/FINAL_decision_v2.md`](_analysis/FINAL_deci
 | `_analysis/*.md` | Per-asset notes (Kodiak, Lucius, Stones, MC trio, shelf trio), market and BOEM production data, upside structures |
 | `_analysis/boem/monthly_by_lease.csv` | Public BOEM monthly production by lease |
 | `_analysis/panel/` | Expert-panel reviews (reserves engineer, model auditor, title attorney, capital markets, auction strategist, judges, round 2) and their check scripts |
-| `_analysis/model/` | Python valuation engine and the scripts that build the deck, simple deck and Excel model |
+| `_analysis/model/` | Python valuation engine and the scripts that build the deck, simple deck and Excel model; `common.py` holds the shared path, loading and IRR helpers |
+| `_analysis/tests/` | Regression tests: each script's output against `tests/expected/`. After an intended change, run `make expected` and review the diff |
 
 ## Rebuilding the deliverables
 
@@ -32,9 +33,11 @@ Requires Python 3 and `make`.
 make install   # pip install -r requirements.txt
 make           # Excel model, full deck and simple deck
 make irr       # IRR grid from the final decision
+make test      # check every script still reproduces the published figures
 ```
 
-Without `make`, each script takes the folder it reads from or writes to:
+Every script finds `_analysis` on its own, so it runs from any directory. Passing the folder
+explicitly still works:
 
 ```bash
 python _analysis/model/build_xlsx.py _analysis
