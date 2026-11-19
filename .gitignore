@@ -3,6 +3,8 @@
 /*
 !/.gitignore
 !/README.md
+!/requirements.txt
+!/Makefile
 !/_analysis/
 
 __pycache__/
