@@ -1,14 +1,10 @@
-import sys; sys.path.insert(0, sys.argv[1] + '/model')
-import importlib.util
-def load(n):
-    spec = importlib.util.spec_from_file_location(n, sys.argv[1] + f'/model/{n}.py'); m = importlib.util.module_from_spec(spec)
-    sys.argv_backup = sys.argv; spec.loader.exec_module(m); return m
-e1 = load('engine'); e2 = load('engine2')
+import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import analysis_dir, load_script, irr as _irr
+S = analysis_dir()
+e1 = load_script('engine', 'model/engine.py', S); e2 = load_script('engine2', 'model/engine2.py', S)
 # Upside layer = WoodMac-profile revenue (strip prices, no haircuts) minus PDP revenue, floored at 0
 _, wm = e1.value(0.12, detail=True, hurricane=0.0)
 up = {}
-for p in ['Kodiak','Lucius','Stones','SoSantaCruz']:
-    _, pdpcf = None, None
 for p in ['Kodiak','Lucius','Stones','SoSantaCruz']:
     up[p] = {}
     for y in range(2019, 2033):
@@ -23,11 +19,7 @@ for u in (0.0, 0.25, 0.5, 1.0):
     for r in (0.12, 0.15):
         res = e2.run(r, upside=u); print(f'PDP + {int(u*100)}% of drilling upside @{int(r*100)}%:', {k: round(res[k],1) for k in hdr})
 def irr(cfs):
-    lo, hi = -0.9, 3.0
-    for _ in range(200):
-        mid = (lo+hi)/2; npv = sum(c/(1+mid)**t for t, c in cfs)
-        lo, hi = (mid, hi) if npv > 0 else (lo, mid)
-    return mid
+    return _irr(cfs, -0.9, 3.0)
 def deal(bid, upside=0.0, kind='strip', cfg=None, horizon=2032):
     _, cf = e2.run(0.12, kind=kind, upside=upside, cfg=cfg, horizon=horizon, detail=True)
     credit = 0.70*cf[2018]

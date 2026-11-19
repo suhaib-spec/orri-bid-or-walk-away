@@ -1,7 +1,9 @@
 """Actuals-anchored (BOEM) ORRI valuation. Valuation date 2018-08-15; effective date 2018-01-01; closing 2018-09-14.
 Base = existing wells only (PDP), per case rule 'cannot assume when drilling will happen'. Drilling = separate upside layer."""
 import csv, sys, collections, calendar, itertools
-S = sys.argv[1] if len(sys.argv) > 1 else '.'
+import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import analysis_dir
+S = analysis_dir()
 rows = list(csv.DictReader(open(S + '/boem/monthly_by_lease.csv')))
 PMAP = {'Kodiak':'Kodiak','Lucius':'Lucius','Stones':'Stones','South Santa Cruz':'SoSantaCruz','Grand Isle 116 unit':'GrandIsle',
         'Main Pass 59':'MainPass','Ship Shoal 219':'ShipShoal','Orion':'Orion'}

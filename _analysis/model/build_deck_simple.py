@@ -12,7 +12,10 @@ from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.enum.shapes import MSO_SHAPE
 from pptx.enum.dml import MSO_LINE_DASH_STYLE
 
-OUT = os.path.join(sys.argv[1], 'ORRI_Bid_or_Walk_Away_SIMPLE.pptx')
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import ANALYSIS_DIR
+# Output folder: first argument, else _analysis/deliverables
+OUT = os.path.join(sys.argv[1] if len(sys.argv) > 1 else os.path.join(ANALYSIS_DIR, 'deliverables'), 'ORRI_Bid_or_Walk_Away_SIMPLE.pptx')
 NAVY = RGBColor(0x1F, 0x38, 0x64); GREY = RGBColor(0x59, 0x59, 0x59); RED = RGBColor(0xC0, 0x00, 0x00)
 GREEN = RGBColor(0x37, 0x86, 0x3C); LIGHT = RGBColor(0xD9, 0xE1, 0xF2); WHITE = RGBColor(0xFF, 0xFF, 0xFF)
 PALE = RGBColor(0xF2, 0xF2, 0xF2); MID = RGBColor(0xA6, 0xA6, 0xA6); YELLOW = RGBColor(0xFF, 0xF2, 0xCC)

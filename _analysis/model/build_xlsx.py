@@ -11,7 +11,9 @@ from openpyxl.comments import Comment
 from openpyxl.chart import LineChart, BarChart, Reference
 from openpyxl.worksheet.datavalidation import DataValidation
 
-S = sys.argv[1]
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import analysis_dir
+S = analysis_dir()
 OUT = os.path.join(S, 'deliverables', 'ORRI_Bid_Model.xlsx')
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 
