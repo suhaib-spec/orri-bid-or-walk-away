@@ -1,5 +1,7 @@
-import sys, runpy
-S = sys.argv[1]
+import runpy
+import os, sys; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'model'))
+from common import analysis_dir
+S = analysis_dir()
 g = runpy.run_path(S + '/panel/scripts/audit_model.py', run_name='audit')  # re-runs prints; REANCHOR ends True
 cd, e2 = g['corr_deal'], g['e2']
 for b in (105, 115, 118):

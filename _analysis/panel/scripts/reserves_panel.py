@@ -6,7 +6,9 @@ Stones restart timing, and a Monte Carlo for P90/P50/P10.
 Run:  python -I panel/scripts/reserves_panel.py <_analysis dir>
 """
 import csv, sys, collections, calendar, random, math
-S = sys.argv[1] if len(sys.argv) > 1 else '.'
+import os, sys; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'model'))
+from common import analysis_dir
+S = analysis_dir()
 rows = [r for r in csv.DictReader(open(S + '/boem/monthly_by_lease.csv')) if r['public_by_2018_08_15'] == 'Y']
 PMAP = {'Kodiak':'Kodiak','Lucius':'Lucius','Stones':'Stones','South Santa Cruz':'SoSantaCruz','Grand Isle 116 unit':'GrandIsle',
         'Main Pass 59':'MainPass','Ship Shoal 219':'ShipShoal','Orion':'Orion'}

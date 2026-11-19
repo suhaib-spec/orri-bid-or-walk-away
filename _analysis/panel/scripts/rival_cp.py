@@ -1,14 +1,10 @@
-import sys, importlib.util
-A = sys.argv[1]
-sp = importlib.util.spec_from_file_location('rr', A + '/panel/scripts/reserves_rebuttal.py')
-sys.argv = [sys.argv[0], A]; rr = importlib.util.module_from_spec(sp); sp.loader.exec_module(rr)
+import os, sys; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'model'))
+from common import analysis_dir, load_script, irr as _irr
+A = analysis_dir()
+rr = load_script('rr', 'panel/scripts/reserves_rebuttal.py', A)
 rr.rp.SHARE['ShipShoal'] = 0.04
 def irr(cf):
-    lo, hi = -0.5, 2.0
-    for _ in range(200):
-        m = (lo+hi)/2; npv = sum(v/(1+m)**t for t, v in cf)
-        lo, hi = (m, hi) if npv > 0 else (lo, m)
-    return m
+    return _irr(cf, -0.5, 2.0)
 def kod_rates(P, fail=None):
     c = P['Kodiak']; out = {}
     for y in (2019, 2020, 2021):

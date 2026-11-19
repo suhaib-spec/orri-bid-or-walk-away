@@ -3,10 +3,11 @@
 decline anchored to the Sep-centred Jun-Dec rate; horizon 2040; 2% hurricane on Aug15+ production).
 Also: Kodiak P50/P90 and risked sanctioned-development items. Only public_by_2018_08_15 == 'Y' rows used.
 Run: python -I panel/scripts/reserves_rebuttal.py <_analysis dir>"""
-import sys, copy, calendar, random, importlib.util
-S = sys.argv[1]
-sp = importlib.util.spec_from_file_location('rp', S + '/panel/scripts/reserves_panel.py')
-sys.argv = [sys.argv[0], S]; rp = importlib.util.module_from_spec(sp); sp.loader.exec_module(rp)
+import copy, calendar, random
+import os, sys; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'model'))
+from common import analysis_dir, load_script
+S = analysis_dir()
+rp = load_script('rp', 'panel/scripts/reserves_panel.py', S)
 T_CLOSE, LAG, ANCH = 256 / 365, 2 / 12, 0.21
 OIL = lambda w: w + rp.OIL_ADJ - rp.OIL_DED
 GAS = lambda h: h * 1.10 - rp.GAS_DED

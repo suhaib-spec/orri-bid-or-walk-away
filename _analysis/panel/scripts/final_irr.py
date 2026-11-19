@@ -1,17 +1,12 @@
 """Final IRR grid: bids vs cautious (panel engineer) and team (memo) production cases, auditor mechanics.
-Ship Shoal at 4%. t=0 at closing; Jan-Jun 2018 receipts credited at closing. Run: python -I final_irr.py <_analysis>"""
-import sys, importlib.util
-S = sys.argv[1]
-sp = importlib.util.spec_from_file_location('rr', S + '/panel/scripts/reserves_rebuttal.py')
-sys.argv = [sys.argv[0], S]; rr = importlib.util.module_from_spec(sp); sp.loader.exec_module(rr)
+Ship Shoal at 4%. t=0 at closing; Jan-Jun 2018 receipts credited at closing. Run: python -I final_irr.py [<_analysis>]"""
+import os, sys; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'model'))
+from common import analysis_dir, load_script, irr as _irr
+S = analysis_dir()
+rr = load_script('rr', 'panel/scripts/reserves_rebuttal.py', S)
 rr.rp.SHARE['ShipShoal'] = 0.04
 def irr(cf):
-    lo, hi = -0.5, 2.0
-    for _ in range(200):
-        m = (lo + hi) / 2
-        npv = sum(v / (1 + m) ** t for t, v in cf)
-        lo, hi = (m, hi) if npv > 0 else (lo, m)
-    return m
+    return _irr(cf, -0.5, 2.0)
 def cfs(F, bid):
     cf = [(0.0, -bid)]
     for fl in F.values():

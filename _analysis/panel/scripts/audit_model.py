@@ -1,17 +1,14 @@
 """Independent audit of engine2.py / returns.py / levered.py.  Run:
 python -I panel/scripts/audit_model.py "<path to _analysis>"
 Uses only Jan-2015..May-2018 BOEM months (public by 2018-08-15) and the model's own Aug-2018 price deck."""
-import sys, csv, calendar, collections, importlib.util
-S = sys.argv[1]
-sys.argv = [sys.argv[0], S]
-spec = importlib.util.spec_from_file_location('e2', S + '/model/engine2.py'); e2 = importlib.util.module_from_spec(spec); spec.loader.exec_module(e2)
+import csv, calendar, collections
+import os, sys; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'model'))
+from common import analysis_dir, load_script, irr as _irr
+S = analysis_dir()
+e2 = load_script('e2', 'model/engine2.py', S)
 
 def irr(cfs, lo=-0.95, hi=5.0):
-    f = lambda r: sum(c / (1 + r) ** t for t, c in cfs)
-    for _ in range(300):
-        m = (lo + hi) / 2
-        lo, hi = (m, hi) if f(m) > 0 else (lo, m)
-    return m
+    return _irr(cfs, lo, hi, iters=300)
 
 T_AUG15 = 226 / 365          # 2018-08-15 as fraction of 2018
 T_CLOSE = 256 / 365          # 2018-09-14

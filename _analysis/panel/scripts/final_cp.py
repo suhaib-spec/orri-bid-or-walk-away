@@ -1,11 +1,10 @@
 """Performance-payment returns on Excel-consistent basis (operator-trend Stones restart Jul)."""
-import sys, importlib.util
-A = sys.argv[1]
-sp = importlib.util.spec_from_file_location('cp', A + '/panel/scripts/rival_cp.py')
-sys.argv = [sys.argv[0], A]
 import io, contextlib
-with contextlib.redirect_stdout(io.StringIO()):
-    cp = importlib.util.module_from_spec(sp); sp.loader.exec_module(cp)
+import os, sys; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'model'))
+from common import analysis_dir, load_script
+A = analysis_dir()
+with contextlib.redirect_stdout(io.StringIO()):  # rival_cp prints its own grid on load
+    cp = load_script('cp', 'panel/scripts/rival_cp.py', A)
 rr = cp.rr
 orig = rr.flows
 def run(cash, P, kind, fail, sr, pay=True):
