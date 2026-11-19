@@ -1,0 +1,17 @@
+2017 calibration ($M): {'Kodiak': 6.2, 'Lucius': 15.34, 'Stones': 5.34, 'SoSantaCruz': 0.41, 'GrandIsle': 0.18, 'MainPass': 0.3, 'ShipShoal': 1.03, 'Orion': 0.1} TOTAL 28.9
+case                                 Kodiak   Lucius   Stones SoSantaC GrandIsl MainPass ShipShoa    Orion    TOTAL
+PDP strip 10%                          75.0     31.4     22.2      3.0      1.0      1.2      4.2      0.3    138.4
+PDP strip 12%                          72.1     30.4     21.3      2.8      0.9      1.1      4.1      0.3    133.1
+PDP strip 15%                          68.3     29.0     20.0      2.7      0.9      1.1      3.9      0.3    126.2
+PDP strip 20%                          63.1     27.1     18.3      2.4      0.8      0.9      3.6      0.3    116.6
+PDP low 12%                            58.8     25.3     17.1      2.3      0.8      0.9      3.4      0.3    108.9
+PDP flat50 12%                         63.2     27.0     18.5      2.5      0.8      1.0      3.6      0.3    117.0
+PDP high 12%                           87.8     36.0     26.3      3.5      1.1      1.4      4.9      0.4    161.5
+PDP strip 12% decline x1.3             60.8     25.7     18.0      2.5      0.8      1.0      3.6      0.3    112.7
+PDP strip 12% decline x0.7             88.2     37.1     25.8      3.3      1.1      1.3      4.7      0.4    161.9
+PDP strip 12% SS at 4%                 72.1     30.4     21.3      2.8      0.9      1.1      2.0      0.3    131.0
+PDP strip 12% horizon 2027 (10y)       70.6     30.0     20.7      2.7      0.9      1.1      4.1      0.3    130.3
+PDP strip 12% horizon 2040             72.3     30.4     21.4      2.9      0.9      1.1      4.1      0.3    133.5
+PDP strip 12% no hurricane             73.2     30.8     21.6      2.9      0.9      1.2      4.1      0.3    135.0
+PDP strip 12% hurricane 5%             70.6     29.8     20.8      2.8      0.9      1.1      4.0      0.3    130.3
+Annual package ORRI revenue ($M, PDP strip): {2018: 41.5, 2019: 33.3, 2020: 24.6, 2021: 18.3, 2022: 13.9, 2023: 10.9, 2024: 8.5, 2025: 6.6, 2026: 5.0, 2027: 3.9, 2028: 3.1, 2029: 2.4, 2030: 1.9, 2031: 1.5, 2032: 1.2}

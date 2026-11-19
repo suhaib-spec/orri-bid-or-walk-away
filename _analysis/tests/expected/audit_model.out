@@ -1,0 +1,67 @@
+=== 1. Reproduce engine2 baseline ===
+  engine2.run(0.1) TOTAL = 138.4
+  engine2.run(0.12) TOTAL = 133.1
+  engine2.run(0.15) TOTAL = 126.2
+  engine2.run(0.2) TOTAL = 116.6
+  independent rebuild: {0.1: 138.4, 0.12: 133.1, 0.15: 126.2, 0.2: 116.6}  2018 rev 41.53
+
+=== 2. 2018 revenue phasing (production-month basis) ===
+  by month $M: {1: 2.43, 2: 2.58, 3: 3.45, 4: 3.66, 5: 2.98, 6: 3.71, 7: 3.83, 8: 3.83, 9: 3.71, 10: 3.83, 11: 3.71, 12: 3.83}
+  Jan-Jun = 18.8 (45.3%);  Jan1-Sep14 = 28.2 (67.9%);  model credit 0.70x = 29.1
+  cash at close @110: model 80.9; corrected (seller has received only Jan-Jun production by Sep 14) 91.2
+
+=== 3. 2017 calibration ===
+  engine2.rev2017() TOTAL = 28.9 (memo says 20.4)
+  Lucius 2017 @unit 1.4288% = 15.34; @2% lease-located (actual 2017 basis) = 7.00; corrected total = 20.55
+  accrual 2017 (monthly WTI) = 20.52;  cash-basis 2017 (Nov16-Oct17 prod) = 21.27
+  2017 with NO deductions = 21.82 (also "within ~7%" of 20.4 -> deductions not identified by the fit)
+  Lucius Jan-May18 lease-located fraction = 52.9% -> pre-unit-basis effective share 1.0585% vs 1.4288%
+
+=== 4. Price: OIL_ADJ is an ADDITIVE +$0.70/bbl (WTI+0.7-3.0 = WTI-2.3), not a 0.7 multiplier ===
+  +$1/bbl realisation -> PV12 135.2 (delta +2.1)
+  +$3/bbl realisation -> PV12 139.5 (delta +6.4)
+
+=== 5. Horizon ===
+  PV12 of 2033-2040 (dropped): 0.41  undiscounted: 2.62
+  gross rates in final modeled year (kb/d): {'Kodiak': 0.23, 'Lucius': 0.05, 'Stones': 0.15, 'SoSantaCruz': 0.21, 'GrandIsle': 0.14, 'MainPass': 0.08, 'ShipShoal': 0.13, 'Orion': 0.16}
+  PV12 economic-limit cut {'Kodiak': 2028, 'Lucius': 2030, 'Stones': 2032, 'SoSantaCruz': 2026} : 131.8
+
+=== 6. Corrected valuation (PV at closing 2018-09-14 unless noted) ===
+  re-anchored Jun-Dec18 rates (oil kb/d, gas mmcf/d) vs model: {'Kodiak': (15.25, 12.54, (16.0, 13.0)), 'Lucius': (28.06, 26.6, (30.0, 29.0)), 'Stones': (20.0, 3.0, (20.0, 3.0)), 'SoSantaCruz': (3.12, 1.66, (3.4, 1.8)), 'GrandIsle': (1.39, 17.44, (1.5, 18.5)), 'MainPass': (0.34, 1.51, (0.35, 1.6)), 'ShipShoal': (0.56, 2.58, (0.6, 2.8)), 'Orion': (0.33, 0.02, (0.4, 0.0))}
+  engine2 as-is (PV @ Aug 15)                                                           PV12  133.1
+  re-date PV to closing Sep 14                                                          PV12  134.3  (+1.2)
+  + 2018 cash timing (Jan-Jun credit; Jul-Sep via final settlement; lag; hurricane)     PV12  133.3  (-1.0)
+  + 60-day payment lag 2019+                                                            PV12  131.6  (-1.7)
+  + decline anchored to Jun-Dec midpoint (exp y-2018-0.21)                              PV12  136.5  (+4.9)
+  + horizon to field end (2035-2040)                                                    PV12  136.9  (+0.4)
+  + Jun-Dec18 rate re-anchored to Mar-May actual x decline                              PV12  131.5  (-5.4)
+  CORRECTED PDP: {'10%': 137.1, '12%': 131.5, '15%': 124.2, '20%': 114.2}  | @Aug15: {'10%': 136.0, '12%': 130.3, '15%': 122.8, '20%': 112.5}
+  corrected low 45/2.25                              PV12  107.3  PV15  101.7
+  corrected decline x1.3                             PV12  112.2  PV15  107.2
+  corrected Ship Shoal 4%                            PV12  129.5  PV15  122.3
+  corrected Lucius @ pre-unit lease-located share    PV12  123.8  PV15  116.9
+  corrected +$3/bbl Mars/LLS premium                 PV12  137.8  PV15  130.1
+
+=== 7. Returns: replicate returns.py, then corrected ===
+  bid | model IRR (indep. recompute) | corrected IRR | MOIC | payback(y) | cash@close | corr. low-price IRR | corr. decl x1.3 IRR
+  100 |  35.0% |  29.8% | 1.79x | 3.0 |  81.4 |  16.0% |  20.1%
+  110 |  25.8% |  22.5% | 1.63x | 3.0 |  91.4 |  10.7% |  13.2%
+  120 |  19.1% |  16.9% | 1.49x | 4.0 | 101.4 |   6.7% |   8.0%
+  125 |  16.3% |  14.6% | 1.43x | 4.0 | 106.4 |   5.0% |   5.8%
+  130 |  13.9% |  12.6% | 1.38x | 4.0 | 111.4 |   3.5% |   3.9%
+
+=== 8. Levered (levered.py) ===
+  model loan 40% x run(0.10,low) = 45.2
+  model-basis strip dx1.0 bid 110: IRR  32.7%  debt repaid 2021.5  residual 0.00
+  model-basis low   dx1.0 bid 110: IRR  14.5%  debt repaid 2023.5  residual 0.00
+  model-basis strip dx1.3 bid 110: IRR  16.5%  debt repaid 2021.5  residual 0.00
+  model-basis strip dx1.0 bid 125: IRR  18.6%  debt repaid 2021.5  residual 0.00
+  model-basis low   dx1.0 bid 125: IRR   4.7%  debt repaid 2023.5  residual 0.00
+  model-basis strip dx1.3 bid 125: IRR   5.7%  debt repaid 2021.5  residual 0.00
+  of which 2018 revenue in model PV10-low: 41.0
+  corrected   strip dx1.0 bid 110: loan 29.9  IRR  23.4%  debt repaid 2019.7  residual 0.00
+  corrected   low   dx1.0 bid 110: loan 29.9  IRR  10.9%  debt repaid 2019.7  residual 0.00
+  corrected   strip dx1.3 bid 110: loan 23.2  IRR  13.5%  debt repaid 2019.7  residual 0.00
+  corrected   strip dx1.0 bid 125: loan 29.9  IRR  15.0%  debt repaid 2019.7  residual 0.00
+  corrected   low   dx1.0 bid 125: loan 29.9  IRR   4.9%  debt repaid 2019.7  residual 0.00
+  corrected   strip dx1.3 bid 125: loan 23.2  IRR   5.8%  debt repaid 2019.7  residual 0.00

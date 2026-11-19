@@ -1,0 +1,6 @@
+strip  None                   bid 110: equity at close  80.9, loan 45.2, levered equity IRR  32.7%, MOIC 1.78x, debt repaid by 2021
+strip  None                   bid 125: equity at close  95.9, loan 45.2, levered equity IRR  18.6%, MOIC 1.50x, debt repaid by 2021
+low    None                   bid 110: equity at close  80.9, loan 45.2, levered equity IRR  14.5%, MOIC 1.33x, debt repaid by 2023
+low    None                   bid 125: equity at close  95.9, loan 45.2, levered equity IRR   4.7%, MOIC 1.12x, debt repaid by 2023
+strip  {'decl_mult': 1.3}     bid 110: equity at close  80.9, loan 38.5, levered equity IRR  16.5%, MOIC 1.34x, debt repaid by 2021
+strip  {'decl_mult': 1.3}     bid 125: equity at close  95.9, loan 38.5, levered equity IRR   5.7%, MOIC 1.13x, debt repaid by 2021

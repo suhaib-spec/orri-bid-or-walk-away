@@ -1,0 +1,24 @@
+case                                          Kodiak  Lucius  Stones SoSanta GrandIs MainPas ShipSho   Orion   TOTAL
+MEMO reproduction 12%                           72.1    30.4    21.3     2.8     0.9     1.1     4.1     0.3   133.1
+MEMO reproduction 15%                           68.3    29.0    20.0     2.7     0.9     1.1     3.9     0.3   126.2
+PANEL base 10%                                  51.0    25.3    16.0     1.9     0.9     1.1     4.1     0.3   100.6
+PANEL base 12%                                  49.5    24.6    15.6     1.9     0.9     1.0     4.0     0.3    97.7
+PANEL base 15%                                  47.5    23.7    14.9     1.8     0.8     0.9     3.8     0.3    93.7
+PANEL base 20%                                  44.6    22.4    14.0     1.7     0.7     0.9     3.5     0.3    88.1
+PANEL base 12% low deck                         41.4    21.0    12.4     1.6     0.7     0.8     3.3     0.2    81.4
+PANEL base 12% gas_mult 1.0                     49.3    24.5    15.6     1.9     0.8     1.0     3.9     0.3    97.3
+PANEL base 12% hurricane 3%                     49.2    24.5    15.5     1.8     0.9     1.0     3.9     0.3    97.1
+PANEL base 12% horizon 2040                     49.5    24.6    15.6     1.9     0.9     1.0     4.0     0.3    97.7
+MEMO + panel Kodiak only 12%                    49.5    30.4    21.3     2.8     0.9     1.1     4.1     0.3   110.5
+MEMO + panel Lucius only 12%                    72.1    24.6    21.3     2.8     0.9     1.1     4.1     0.3   127.3
+MEMO + panel Stones only 12%                    72.1    30.4    15.6     2.8     0.9     1.1     4.1     0.3   127.4
+MEMO + panel SoSantaCruz only 12%               72.1    30.4    21.3     1.9     0.9     1.1     4.1     0.3   132.1
+Remaining gross oil Jun-2018+ (MMbbl): memo vs panel
+  Kodiak       memo   23.8   panel   15.6
+  Lucius       memo   39.2   panel   29.2
+  Stones       memo   33.3   panel   20.9
+  SoSantaCruz  memo    7.3   panel    3.5
+PANEL annual ORRI revenue $M: {2018: 37.0, 2019: 25.2, 2020: 17.1, 2021: 12.3, 2022: 9.3, 2023: 7.4, 2024: 4.6, 2025: 3.8, 2026: 3.0, 2027: 0.1, 2028: 0.1, 2029: 0.1, 2030: 0.1}
+MC 12% (prod+price)                P90   74.0  P50   92.5  P10  113.5  mean   93.3
+MC 15% (prod+price)                P90   71.8  P50   89.0  P10  108.4  mean   89.7
+MC 12% production only, strip      P90   77.7  P50   92.9  P10  106.2  mean   92.3

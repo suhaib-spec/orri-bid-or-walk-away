@@ -1,0 +1,14 @@
+Memo inputs, auditor mechanics       {'10%': 142.7, '12%': 136.9, '15%': 129.3} {'Kodiak': 74.2, 'Lucius': 31.3, 'Stones': 21.9, 'SoSantaCruz': 2.9, 'GrandIsle': 0.9, 'MainPass': 1.1, 'ShipShoal': 4.2, 'Orion': 0.3}
+Panel inputs, auditor mechanics      {'10%': 107.9, '12%': 104.4, '15%': 99.7} {'Kodiak': 52.8, 'Lucius': 26.4, 'Stones': 16.9, 'SoSantaCruz': 2.0, 'GrandIsle': 0.9, 'MainPass': 1.0, 'ShipShoal': 4.0, 'Orion': 0.3}
+Kodiak P50 (35%,b.5,90%,1.5)        PV12  52.8  PV15  50.4
+Kodiak De 25%                       PV12  66.1  PV15  61.9
+Kodiak De 45%, up 85%, q 14         PV12  39.0  PV15  37.7
+Kodiak up 1.0, qlim 1.0             PV12  59.2  PV15  56.2
+MC Package 12%  P90   81.3 P50   98.3 P10  111.9 mean   97.4
+MC Package 15%  P90   78.8 P50   94.2 P10  106.4 mean   93.3
+MC Kodiak 12%   P90   32.3 P50   47.7 P10   59.6 mean   46.8
+MC Kodiak 15%   P90   31.7 P50   45.9 P10   56.7 mean   44.9
+Hadrian North (in unit; 15 kb/d from 2019.5)     unrisked PV12   9.9  risked PV12   3.2  PV15   2.9
+Lucius 9th well / KC919 rework (10 kb/d 2019)    unrisked PV12   7.7  risked PV12   2.3  PV15   2.1
+Stones Phase 2 (2 wells, 20 kb/d 2020)           unrisked PV12  13.9  risked PV12   3.3  PV15   3.0
+Kodiak 2nd well (10 kb/d 2020)                   unrisked PV12  26.9  risked PV12   4.0  PV15   3.6

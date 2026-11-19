@@ -1,0 +1,22 @@
+Unrisked drilling upside $M/yr by property (2019-2024):
+  Kodiak       [5.4, 3.5, 2.0, 1.6, 2.0, 4.0] sum2019-32 47.5
+  Lucius       [12.5, 11.6, 9.9, 8.0, 6.3, 5.6] sum2019-32 103.0
+  Stones       [17.2, 13.1, 9.3, 6.5, 4.6, 3.3] sum2019-32 84.0
+  SoSantaCruz  [2.1, 1.5, 1.1, 0.8, 0.6, 0.8] sum2019-32 9.9
+PDP + 0% of drilling upside @12%: {'Kodiak': 72.1, 'Lucius': 30.4, 'Stones': 21.3, 'SoSantaCruz': 2.8, 'TOTAL': 133.1}
+PDP + 0% of drilling upside @15%: {'Kodiak': 68.3, 'Lucius': 29.0, 'Stones': 20.0, 'SoSantaCruz': 2.7, 'TOTAL': 126.2}
+PDP + 25% of drilling upside @12%: {'Kodiak': 78.2, 'Lucius': 44.4, 'Stones': 33.8, 'SoSantaCruz': 4.4, 'TOTAL': 167.2}
+PDP + 25% of drilling upside @15%: {'Kodiak': 73.6, 'Lucius': 41.5, 'Stones': 31.4, 'SoSantaCruz': 4.1, 'TOTAL': 156.7}
+PDP + 50% of drilling upside @12%: {'Kodiak': 84.3, 'Lucius': 58.4, 'Stones': 46.3, 'SoSantaCruz': 6.0, 'TOTAL': 201.4}
+PDP + 50% of drilling upside @15%: {'Kodiak': 78.9, 'Lucius': 53.9, 'Stones': 42.8, 'SoSantaCruz': 5.5, 'TOTAL': 187.3}
+PDP + 100% of drilling upside @12%: {'Kodiak': 96.5, 'Lucius': 86.4, 'Stones': 71.2, 'SoSantaCruz': 9.2, 'TOTAL': 269.7}
+PDP + 100% of drilling upside @15%: {'Kodiak': 89.6, 'Lucius': 78.8, 'Stones': 65.6, 'SoSantaCruz': 8.4, 'TOTAL': 248.5}
+
+Bid  | cash@close | IRR PDP | MOIC PDP | payback | IRR PDP+25%up | IRR low-price | IRR steep decline
+  90 |      60.9 |   48.2% |   1.96x |   1.8y |   72.1% |   27.3% |   34.7%
+ 100 |      70.9 |   35.0% |   1.77x |   2.8y |   54.7% |   18.3% |   22.8%
+ 110 |      80.9 |   25.8% |   1.61x |   2.8y |   42.7% |   12.0% |   14.5%
+ 120 |      90.9 |   19.1% |   1.47x |   3.8y |   34.0% |    7.3% |    8.4%
+ 130 |     100.9 |   13.9% |   1.36x |   3.8y |   27.3% |    3.6% |    3.8%
+ 140 |     110.9 |    9.8% |   1.26x |   4.8y |   22.2% |    0.7% |    0.1%
+ 150 |     120.9 |    6.5% |   1.18x |   5.8y |   18.0% |   -1.8% |   -2.9%
