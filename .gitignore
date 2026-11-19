@@ -5,6 +5,7 @@
 !/README.md
 !/requirements.txt
 !/Makefile
+!/.github/
 !/_analysis/
 
 __pycache__/
