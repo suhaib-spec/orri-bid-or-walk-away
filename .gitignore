@@ -1,0 +1,12 @@
+# Only the team's own work is tracked. The case data room (lease PDFs,
+# assignments, reserves reports, case brief) is third-party material and stays local.
+/*
+!/.gitignore
+!/README.md
+!/_analysis/
+
+__pycache__/
+*.pyc
+~$*
+.DS_Store
+Thumbs.db
