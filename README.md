@@ -13,7 +13,7 @@ The full reasoning is in [`_analysis/FINAL_decision_v2.md`](_analysis/FINAL_deci
 |---|---|
 | `_analysis/deliverables/ORRI_Bid_or_Walk_Away.pptx` | Full presentation deck (slide previews in `png/`) |
 | `_analysis/deliverables/ORRI_Bid_or_Walk_Away_SIMPLE.pptx` | Simpler version of the deck (slide previews in `png_simple/`) |
-| `_analysis/deliverables/Presentation_Script_10min.*` | 10-minute presentation script (`.docx`, `.pdf`, `.txt`), plus a formal version |
+| `_analysis/deliverables/Presentation_Script_10min.*` | 10-minute presentation script (`.docx`, `.pdf`), plus a formal version (`.docx`) |
 | `_analysis/deliverables/Presenter_Guide*.md` | Presenter guides for both decks |
 | `_analysis/deliverables/Judge_QA.*` | Prepared answers for judges' questions |
 | `_analysis/deliverables/ORRI_Bid_Model.xlsx` | Valuation and bid model workbook |
@@ -26,16 +26,22 @@ The full reasoning is in [`_analysis/FINAL_decision_v2.md`](_analysis/FINAL_deci
 
 ## Rebuilding the deliverables
 
-Requires Python 3 with `python-pptx` and `openpyxl`.
+Requires Python 3 and `make`.
 
 ```bash
-pip install python-pptx openpyxl
-python _analysis/model/build_xlsx.py
-python _analysis/model/build_deck.py
-python _analysis/model/build_deck_simple.py
+make install   # pip install -r requirements.txt
+make           # Excel model, full deck and simple deck
+make irr       # IRR grid from the final decision
 ```
 
-IRR grid from the final decision: `python _analysis/panel/scripts/final_irr.py _analysis`.
+Without `make`, each script takes the folder it reads from or writes to:
+
+```bash
+python _analysis/model/build_xlsx.py _analysis
+python _analysis/model/build_deck.py _analysis/deliverables
+python _analysis/model/build_deck_simple.py _analysis/deliverables
+python _analysis/panel/scripts/final_irr.py _analysis
+```
 
 ## Not included
 
