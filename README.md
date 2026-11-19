@@ -43,3 +43,8 @@ The case data room (lease documents, serial register pages, ORRI assignments, un
 reserves reports, location map, purchase price allocation, bid instructions and case brief) was provided
 by the case sponsor and is not redistributed here. Citations in the analysis refer to those files by
 their data-room paths (for example `Kodiak/SourceDocs/5. ABOS KODIAK.pdf`).
+
+## Contributors
+
+- Suhaibuddin Ahmed ([@suhaib-spec](https://github.com/suhaib-spec))
+- Usama Bin Faheem ([@UB0013](https://github.com/UB0013))
